@@ -2,10 +2,8 @@ import shoppingList from './shopping-list.js';
 import store from './store.js';
 import item from './item.js';
 
-const main = function () {
-  shoppingList.bindEventListeners();
-  shoppingList.render();
 
+const main = function () {
   const itemNames = [ '', 'apples', 'pears' ];
   itemNames.forEach(name => {
     try {
@@ -16,7 +14,13 @@ const main = function () {
       console.log(`Cannot add item: ${error.message}`);
     }
   });
+  shoppingList.bindEventListeners();
+  shoppingList.render();
+
+
 
 };
+
+
 
 $(main);

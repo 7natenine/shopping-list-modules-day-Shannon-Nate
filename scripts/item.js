@@ -1,23 +1,23 @@
-function validateName(name){
 
-  if (name === undefined){
+
+function validateName(name) {
+  if (name === undefined || name === '') {
     throw new TypeError('Name must not be blank');
-  } 
-
+  }
 }
 
-function create(name){
-  return item = {
+function create(name) {
+  return {
     id: cuid(),
-    name: name,
+    name,
     checked: false
-    };
-  
+  };
 }
+
 
 export default {
   validateName,
-  create,
+  create
 };
 
 
