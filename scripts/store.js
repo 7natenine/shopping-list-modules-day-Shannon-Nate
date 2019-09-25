@@ -1,4 +1,5 @@
-import item from './item.js';
+import Item from './item.js';
+// import {create, validateName} from './item.js';
 
 const items =  [];
 const hideCheckedItems = false;
@@ -9,8 +10,8 @@ function findById(id){
 
 function addItem(name){
   try{
-    item.validateName(name);
-    let newItem = item.create(name);
+    Item.validateName(name);
+    const newItem = Item.create(name);
     this.items.push(newItem);
   }
 
@@ -20,15 +21,15 @@ function addItem(name){
 }
 
 function findAndToggleChecked(id){
-  let item = this.findById(id);
-  !item.checked;
+  const obj = this.findById(id);
+  obj.checked = !obj.checked;
 }
 
 function findAndUpdateName(id,newName){
   try{
-    item.validateName(newName);
-    let item = findById(id);
-    item.name = newName;
+    Item.validateName(newName);
+    const obj = this.findById(id);
+    obj.name = newName;
   }
 
   catch(error){
